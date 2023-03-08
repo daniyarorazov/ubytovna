@@ -8,6 +8,10 @@
     font-weight: 600;
 }
 
+body {
+    display: flex;
+}
+
 .sidebar {
     width: 291px;
     height: 100vh;
@@ -49,4 +53,32 @@
 .sidebar .sidebar-list .sidebar-list__item-active a {
     color: #fff;
 }
+
+/* Styles for main block */
+
+main {
+    padding-top: 39px;
+}
+
+.accordion-tab {
+    width: 75em;
+}
+
+main .accordion-item {
+    border: none;
+}
+
+main .accordion-button {
+    width: 75em;
+    background-color: #262626;
+    color: #fff;
+    border-radius: 16px;
+}
+
+main .accordion-tab table.dataTable tbody tr.row-1 {
+}
+
+main .accordion-tab table.dataTable tbody tr.row-2 {
+}
+
 
