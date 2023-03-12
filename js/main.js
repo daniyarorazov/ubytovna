@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
     dataTableFunctions();
     calendarFunction();
     chartFunction();

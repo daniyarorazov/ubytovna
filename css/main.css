@@ -88,4 +88,22 @@ main .accordion-tab table.dataTable tbody tr.row-1 {
 main .accordion-tab table.dataTable tbody tr.row-2 {
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background: #262626;
+}
+
+.nav-pills .nav-link {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #F0F0F0;
+    color: #262626;
+}
+
+#pills-chart-tab {
+    border-radius: 100px 0 0 100px;
+}
+
+#pills-table-tab {
+    border-radius: 0 100px 100px 0;
+}
 
