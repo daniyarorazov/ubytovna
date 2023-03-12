@@ -13,10 +13,12 @@ body {
 }
 
 .sidebar {
+    display: block;
     width: 291px;
     height: 100vh;
     padding: 66px 0;
     border-right: 1px solid #8F8F8F;
+    position: fixed;
 }
 
 .sidebar .sidebar-list {
@@ -58,6 +60,7 @@ body {
 
 main {
     padding-top: 39px;
+    padding-left: 300px;
 }
 
 .section {

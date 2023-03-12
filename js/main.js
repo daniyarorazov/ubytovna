@@ -2,6 +2,7 @@ $(document).ready(() => {
 
     dataTableFunctions();
     calendarFunction();
+    chartFunction();
 });
 
 function dataTableFunctions() {
@@ -59,8 +60,43 @@ function calendarFunction() {
     const td = document.querySelector("#calendar > div > table > tbody > tr:nth-child(1) > td:nth-child(3)")
     if (+obsazenostSplit[0] == 0) {
         $(td).css('background', 'linear-gradient(90deg, #C6F3BD 90%, transparent 50%)');
-        x
     }
+}
+
+function chartFunction() {
+    const data = {
+        labels: ['Le', 'Ún', 'Bř', 'Du', 'Kv', 'Črv', 'Črvc', 'Sr', 'Zá', 'Ří', 'Li', 'Pr'],
+        datasets: [{
+            label: 'Sales',
+            data: [0, 200, 100, 400, 500, 600, 700, 1000, 800, 120, 920, 800],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+            pointStyle: 'circle',
+            pointRadius: 10,
+            pointHoverRadius: 15,
+            pointBackgroundColor: 'rgba(255, 99, 132, 0.5)', // set point background color
+            pointBorderColor: '#fff', // set point border color
+            pointBorderWidth: 2 // set point border width
+        }]
+    };
+
+    const options = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    };
+
+    const chart = new Chart(document.getElementById('myChart'), {
+        type: 'line',
+        data: data,
+        options: options
+    });
+
 }
 
 // function sidebarFunction() {
