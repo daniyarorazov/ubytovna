@@ -60,6 +60,10 @@ main {
     padding-top: 39px;
 }
 
+.section {
+    margin-bottom: 40px;
+}
+
 .accordion-tab {
     width: 75em;
 }

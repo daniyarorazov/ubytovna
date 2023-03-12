@@ -1,14 +1,16 @@
 $(document).ready(() => {
 
     dataTableFunctions();
-
+    calendarFunction();
 });
 
 function dataTableFunctions() {
     $('#myTable').DataTable();
+    $('#myTableNajemnici').DataTable();
+    $('#myTableDluznici').DataTable();
 
     const obsazenostBudovy = document.querySelectorAll('.table__occupancy');
-    const tableRowValues = document.querySelectorAll('.table__row');
+    const tableRowValues = document.querySelectorAll("#myTable > tbody > tr.table__row")
 
     for (let [index, obsazenost] of Array.from(obsazenostBudovy).entries()) {
         let occupancy = ($(obsazenost).text()).split('/');
@@ -32,6 +34,32 @@ function dataTableFunctions() {
             // Red
             tableRowValues[index].style.background = "#FFB6B6";
         }
+    }
+}
+
+function calendarFunction() {
+    const currentDate = new Date(Date.now());
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    const options = {
+        dayNames: ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota',],
+        monthNames: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'],
+        dayBegin: 1,
+
+
+    }
+    let calendar = $("#calendar").calendarGC(options);
+
+    calendar.setDate(formattedDate);
+    let obsazenost = "0/30";
+    let obsazenostSplit = obsazenost.split('/');
+    console.log(+obsazenostSplit[0])
+    const td = document.querySelector("#calendar > div > table > tbody > tr:nth-child(1) > td:nth-child(3)")
+    if (+obsazenostSplit[0] == 0) {
+        $(td).css('background', 'linear-gradient(90deg, #C6F3BD 90%, transparent 50%)');
+        x
     }
 }
 
